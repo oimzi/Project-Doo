@@ -13,15 +13,10 @@ class MyApp extends StatelessWidget {
         //backgroundColor: Color(0xFAFAFA),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Center(
-            child: Text('doo',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 24,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black),),
-          ),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.menu, color: Colors.black,), onPressed: () {}),
+          ],
         ),
         body: SafeArea(
           child: Column(
@@ -29,13 +24,14 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               Container(
                 height:56.0,
-                //margin: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 20.0),
-                padding: EdgeInsets.fromLTRB(12, 12, 12, 12),
-                color: Color(0xFAFAFA),
-                child: Text('Contaioner1',
+                margin: EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 8.0),
+                padding: EdgeInsets.fromLTRB(16, 14, 16, 14),
+                //color: Color(0xFfffff),
+                child: Text('weekly doo',
                   style: TextStyle(
-                    fontSize: 18.0,
-                    fontFamily: 'Montserrat'
+                    fontSize: 20.0,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.bold,
                   ),),
               )
             ],
