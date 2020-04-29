@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class WeeklyBoxes extends StatelessWidget {
+class WeeklyBox extends StatelessWidget {
   final String week;
   final String date;
   final color;
 
-  const WeeklyBoxes(this.color, this.week, this.date);
+  const WeeklyBox(this.color, this.week, this.date);
 
   @override
   Widget build(BuildContext context) {

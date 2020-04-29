@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_doo_test/ui/shared/shared_styles.dart';
 
 class DooListBar extends StatelessWidget {
   final color;
@@ -25,11 +26,11 @@ class DooListBar extends StatelessWidget {
 }
 
 
-class DooListBoxes extends StatelessWidget {
+class DooListBox extends StatelessWidget {
   final color;
   final double height;
 
-  const DooListBoxes(this.color, this.height);
+  const DooListBox(this.color, this.height);
 //Colors.blueAccent, 'You can do anything', 'Every Tuesday', 'title'
 
   @override
@@ -70,11 +71,7 @@ class TxtQuotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       quotes,
-      style: TextStyle(
-          fontSize: 34,
-          fontFamily: 'Montserrat',
-          fontWeight: FontWeight.w800,
-          color: Colors.white10),
+      style: cTsQuotes,
     );
   }
 }
@@ -88,12 +85,7 @@ class TxtCycle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       cycle,
-      style: TextStyle(
-          fontSize: 14,
-          fontFamily: 'Montserrat',
-          fontWeight: FontWeight.w400,
-          color: Colors.black
-      ),);
+      style: cTsCycle,);
   }
 }
 
