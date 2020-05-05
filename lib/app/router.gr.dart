@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_doo_test/ui/views/home_view.dart';
+import 'package:flutter_doo_test/ui/views/create_view.dart';
 
 abstract class Routes {
   static const homeViewRoute = '/';
+  static const createViewRoute = '/create-view-route';
 }
 
 class Router extends RouterBase {
@@ -25,6 +27,11 @@ class Router extends RouterBase {
       case Routes.homeViewRoute:
         return MaterialPageRoute<dynamic>(
           builder: (context) => HomeView(),
+          settings: settings,
+        );
+      case Routes.createViewRoute:
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => CreateView(),
           settings: settings,
         );
       default:

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class HomeTitleComponent extends StatelessWidget {
   final String title;
-  final Widget icons;
+  final Widget icon;
+  final Function onClickPlus;
 
-  const HomeTitleComponent(this.title, this.icons);
+  const HomeTitleComponent({this.title, this.icon, this.onClickPlus});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +26,16 @@ class HomeTitleComponent extends StatelessWidget {
             ),),
         ),
         IconButton(
-              icon: icons, onPressed: (){}),
+            onPressed: () {
+              onClickPlus();
+            },
+            icon: icon),
       ],
     );
   }
 }
 
-class IconsAdd extends StatelessWidget {
+class IconAdd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(Icons.add, color: Colors.black,size: 24,);
@@ -39,7 +43,7 @@ class IconsAdd extends StatelessWidget {
 }
 
 
-class IconsCalendar extends StatelessWidget {
+class IconCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(Icons.calendar_today, color: Colors.black,size: 24,);

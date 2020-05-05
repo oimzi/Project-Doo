@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_doo_test/ui/views/home_view.dart';
+import 'package:stacked_services/stacked_services.dart';
+
+import 'app/locator.dart';
+import 'app/router.gr.dart';
 
 void main() {
-  runApp(
-    MyApp());
+  setupLocator();
+  runApp(MyApp());
 }
  
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeView(),
+      title: 'Flutter Demo',
+      initialRoute: Routes.homeViewRoute,
+      onGenerateRoute: Router().onGenerateRoute,
+      navigatorKey: locator<NavigationService>().navigatorKey,
     );
   }
 }
