@@ -2,6 +2,7 @@ import 'package:flutter_doo_test/app/locator.dart';
 import 'package:flutter_doo_test/models/doo_model.dart';
 import 'package:flutter_doo_test/services/storage_service.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_doo_test/ui/utils.dart';
 
 void main() {
   group('Service Test', () {
@@ -12,8 +13,8 @@ void main() {
     });
 
     test('simple test', () {
-      var tmp = 1;
-      expect(tmp == 1, true);
+      var cycle = Cycle(dayOfWeeks: [true, false, false, false, false, false, false ]);
+      print(cycle.toDisplayText());
     });
 
     test('dooModel test', () {

@@ -29,60 +29,59 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            body: Column(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    HomeTitleComponent(
-                        title: 'weekly doo', icon: IconCalendar(),
-                        onClickPlus: () {}
-                    ),
-                    Container(
-                      //margin: EdgeInsets.symmetric(vertical: 8.0),
-                      margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
-                      //padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
-                      height: 56.0,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
+            body: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      HomeTitleComponent(
+                          title: 'weekly doo', icon: IconCalendar(),
+                          onClickPlus: () {}
+                      ),
+                      Container(
+                        //margin: EdgeInsets.symmetric(vertical: 8.0),
+                        margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+                        //padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+                        height: 56.0,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            WeeklyBox(Colors.black87, 'Mon.', '12/12'),
+                            SizedBox(width: 8,),
+                            WeeklyBox(Colors.black12, 'Tue.', '12/13'),
+                            SizedBox(width: 8,),
+                            WeeklyBox(Colors.black12, 'Wed.', '12/14'),
+                            SizedBox(width: 8,),
+                            WeeklyBox(Colors.black12, 'Thu.', '12/15'),
+                            SizedBox(width: 8,),
+                            WeeklyBox(Colors.black12, 'Fri.', '12/16'),
+                            SizedBox(width: 8,),
+                            WeeklyBox(Colors.black12, 'Sat.', '12/17'),
+                            SizedBox(width: 8,),
+                            WeeklyBox(Colors.black12, 'Sun.', '12/18'),
+                            SizedBox(width: 8,),
+                          ],
+                        ),
+                      ),
+                      Column(
                         children: <Widget>[
-                          WeeklyBox(Colors.black87, 'Mon.', '12/12'),
-                          SizedBox(width: 8,),
-                          WeeklyBox(Colors.black12, 'Tue.', '12/13'),
-                          SizedBox(width: 8,),
-                          WeeklyBox(Colors.black12, 'Wed.', '12/14'),
-                          SizedBox(width: 8,),
-                          WeeklyBox(Colors.black12, 'Thu.', '12/15'),
-                          SizedBox(width: 8,),
-                          WeeklyBox(Colors.black12, 'Fri.', '12/16'),
-                          SizedBox(width: 8,),
-                          WeeklyBox(Colors.black12, 'Sat.', '12/17'),
-                          SizedBox(width: 8,),
-                          WeeklyBox(Colors.black12, 'Sun.', '12/18'),
-                          SizedBox(width: 8,),
+                          DooListBar(Colors.white, 50),
+                          DooListBar(Colors.white, 50),
                         ],
                       ),
-                    ),
-                    Column(
-                      children: <Widget>[
-                        DooListBar(Colors.white, 50),
-                        DooListBar(Colors.white, 50),
-                      ],
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    HomeTitleComponent(title: 'my doo list', icon: IconAdd(),
-                        onClickPlus: () => model.goCreateView()),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(16, 8, 16, 0),
-                      child: DooListBox(Colors.blueAccent, 200, model.dooListViewModel),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      HomeTitleComponent(title: 'my doo list', icon: IconAdd(),
+                          onClickPlus: () => model.goCreateView()),
+                      DooListBox(Colors.blueAccent, 200, model.dooListViewModel),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
     );

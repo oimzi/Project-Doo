@@ -5,7 +5,9 @@ class DooModel {
   String quotes;
   Cycle cycle;
 
-  DooModel({this.title, this.quotes = C.DEFAULT_QUOTES, this.cycle});
+  DooModel({this.title, this.quotes = C.DEFAULT_QUOTES, this.cycle }) {
+    if (cycle == null) cycle = Cycle();
+  }
 
   @override
   String toString() {
@@ -55,4 +57,5 @@ class Cycle {
   String toString() {
     return 'isEveryday = $_isEveryday, $_dayOfWeeks';
   }
+
 }
