@@ -19,7 +19,7 @@ class DooListViewModel extends BaseViewModel {
           cycle: Cycle(
               dayOfWeeks: [true, false, true, false, false, false, false])),
 
-      DooModel(title: 'Eat water 1L', quotes: '나는 물 먹는 하마!'),
+      DooModel(title: 'Drink 1L water', quotes: '나는 물 먹는 하마!'),
       DooModel(title: 'Study flutter 1 hour', quotes: '탈출 가즈아!'),
     ];
   }
